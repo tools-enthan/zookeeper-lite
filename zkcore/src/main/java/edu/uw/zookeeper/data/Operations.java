@@ -341,7 +341,8 @@ public abstract class Operations {
                 List<ACL> acls = Acls.Acl.asRecordList(getAcl());
                 int mode = getMode().intValue();
                 Records.Request record = getStat() 
-                        ? new ICreate2Request(path, data, acls, mode) 
+//                        ? new ICreate2Request(path, data, acls, mode)
+                        ? new ICreateRequest(path, data, acls, mode)
                         : new ICreateRequest(path, data, acls, mode);
                 return record;
             }
